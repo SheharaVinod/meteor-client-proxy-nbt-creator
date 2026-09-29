@@ -42,6 +42,10 @@ def build_proxy(display_name, protocol, address, port):
     return Compound({'settings': Compound({'groups': List[Compound]([group])})})
 
 
+def build_root(proxies_list):
+    return Compound({'proxies': proxies_list, 'settings': Compound({})})
+
+
 def read_proxies(csv_filepath):
     proxies_by_country = defaultdict(list)
 
@@ -72,7 +76,7 @@ def convert_csv_to_proxies_nbt(csv_filepath, nbt_filepath):
             display_name = f'{country} {index} {city}'
             proxies_list.append(build_proxy(display_name, protocol, address, port))
 
-    root = Compound({'proxies': proxies_list, 'settings': Compound({})})
+    root = build_root(proxies_list)
 
     nbt_file = nbtlib.File(root, gzipped=False)
     nbt_file.save(nbt_filepath)

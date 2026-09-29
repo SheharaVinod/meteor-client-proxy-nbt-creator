@@ -2,3 +2,6 @@
 .idea/
 meteor_client_proxy_nbt_creator.egg-info/
 proxies.nbt
+__pycache__/
+build/
+*.egg-info/
