@@ -1,2 +1,4 @@
 .venv/
 .idea/
+meteor_client_proxy_nbt_creator.egg-info/
+proxies.nbt
