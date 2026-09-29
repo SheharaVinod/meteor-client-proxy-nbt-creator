@@ -2,4 +2,6 @@
 name = "meteor-client-proxy-nbt-creator"
 version = "0.1.0"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "nbtlib>=2.0.4",
+]
